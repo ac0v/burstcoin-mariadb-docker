@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+
+  burstcoincg:
+    build: ./burstcoincg
+    restart: always
+    ports:
+      - 8125
+    depends_on:
+      - db
+    links:
+      - db
+    volumes:
+      - ./conf:/conf
+    env_file:
+      - default.env
+
+  db:
+    image: bitnami/mariadb:10.1.28-r2
+    restart: always
+    volumes:
+      - ./burst_db:/bitnami
+    env_file:
+      - default.env
