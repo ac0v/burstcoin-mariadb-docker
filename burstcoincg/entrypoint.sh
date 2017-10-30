@@ -14,9 +14,10 @@ fi
 if [ ! -f $CONFFILE ]; then
     value_of[nxt.peerServerHost]=0.0.0.0
     value_of[nxt.uiServerHost]=0.0.0.0
-    value_of[nxt.myAddress]=0.0.0.0
-    value_of[nxt.allowedUserHosts]=*
+    value_of[nxt.apiServerPort]=8125
+    value_of[nxt.apiServerHost]=0.0.0.0
     value_of[nxt.allowedBotHosts]=*
+    value_of[nxt.allowedUserHosts]=*
 fi
 
 for key in "${!value_of[@]}"
